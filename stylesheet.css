@@ -1,0 +1,52 @@
+@font-face {
+    font-family: rainyhearts;
+    src: url('rainyhearts.ttf');
+}
+
+body {
+    font-family: rainyhearts;
+    font-size: 25px;
+    color: rgb(2, 61, 15);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    text-shadow: -1px -1px 0 rgb(255, 238, 226), 1px -1px 0 rgb(255, 238, 226), -1px 1px 0 rgb(255, 238, 226), 1px 1px 0 rgb(255, 238, 226);
+    background-image: url(bob%20dance.gif);
+    background-size: 30%;
+    background-color:rgb(255, 238, 226);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer {
+    color: rgb(31, 6, 0);
+    background-color: rgb(255, 220, 177);
+}
+
+li {
+    text-align: left;
+    font-family: rainyhearts;
+    src: url('rainyhearts.ttf');
+    color: rgb(2, 61, 15);
+}
+
+p {
+    line-height: normal;
+}
+
+#center_header {
+    text-align: center;
+    background-color: rgb(255, 191, 228);
+    font-size: 40px;
+}
+
+#other_header {
+    background-color: rgb(255, 191, 228);
+    display: inline-block;
+}
+
+#right {
+    float: right;
+}
