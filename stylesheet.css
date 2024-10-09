@@ -6,7 +6,7 @@
 body {
     font-family: rainyhearts;
     font-size: 25px;
-    color: rgb(2, 61, 15);
+    color: rgb(53, 0, 26);
     margin-left: auto;
     margin-right: auto;
 }
@@ -29,24 +29,44 @@ li {
     text-align: left;
     font-family: rainyhearts;
     src: url('rainyhearts.ttf');
-    color: rgb(2, 61, 15);
 }
 
 p {
     line-height: normal;
 }
 
-#center_header {
+.center_header {
     text-align: center;
     background-color: rgb(255, 191, 228);
     font-size: 40px;
+    padding: 10px;
 }
 
-#other_header {
+.other_header {
+    width: fit-content;
     background-color: rgb(255, 191, 228);
-    display: inline-block;
+    padding: 0px 5px;
 }
 
-#right {
+.right {
     float: right;
+}
+
+.skip {
+    background-color: white;
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+.skip:focus {
+    transform: translateY(0%);
+}
+
+.navigation {
+    width: fit-content;
+    background-color: white;
+    margin: 20px 0px;
+    padding: 30px;
+    border: 2px solid rgb(255, 191, 228);
+    border-radius: 10px;
 }

@@ -1,0 +1,205 @@
+@font-face {
+    font-family: rainyhearts;
+    src: url('rainyhearts.ttf');
+}
+
+body {
+    font-family: rainyhearts;
+    font-size: 25px;
+    color: rgb(61, 60, 2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    text-shadow: -1px -1px 0 rgb(254, 255, 187), 1px -1px 0 rgb(254, 255, 187), -1px 1px 0 rgb(254, 255, 187), 1px 1px 0 rgb(254, 255, 187);
+    background-color:rgb(254, 255, 187);
+    background-position: center;
+}
+
+footer {
+    color: rgb(31, 6, 0);
+    background-color: rgb(255, 220, 177);
+}
+
+
+.center_header {
+    text-align: center;
+    background-color: rgb(255, 246, 120);
+    font-size: 40px;
+    padding: 10px;
+}
+
+.other_header {
+    width: fit-content;
+    background-color: rgb(255, 246, 120);
+    padding: 0px 5px;
+}
+
+.right {
+    float: right;
+}
+
+.skip {
+    background-color: white;
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+.skip:focus {
+    transform: translateY(0%);
+}
+
+.navigation {
+    width: fit-content;
+    background-color: white;
+    margin: 20px 0px;
+    padding: 30px;
+    border: 2px solid rgb(255, 246, 120);
+    border-radius: 10px;
+}
+
+@keyframes flip_left {
+    from {
+        transform: scaleX(1)
+    }
+    50% {transform: scaleX(-1)}
+    to {
+        transform: scaleX(-1);
+    }
+}
+
+@keyframes flip_right {
+    from {
+        transform: scaleX(-1)
+    }
+    50% {transform: scaleX(1)}
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.flip_left {
+    animation-name: flip_left;
+    animation-duration: 0.968s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1);
+}
+
+.flip_right {
+    animation-name: flip_right;
+    animation-duration: 0.968s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1);
+}
+
+.lemonade {
+    display: flex;
+    background-color: white;
+    margin: 20px 0px;
+    border: 5px solid rgb(255, 246, 120);
+    border-radius: 10px;
+}
+
+.lemonade img {
+    flex: 1;
+}
+
+.lemonade img:nth-child(2) {
+    transform: scale(0.9);
+    filter: blur(5px);
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(360deg);}
+}
+
+@keyframes bounce {
+    0% {transform: scaleX(100%) scaleY(100%); visibility: visible;}
+    12.5% {transform: scaleX(300%) scaleY(30%); visibility: visible;}
+    13% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    25% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    37.5% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    50% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    62.5% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    75% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    87.5% {transform: scaleX(300%) scaleY(30%); visibility: hidden;}
+    88% {transform: scaleX(300%) scaleY(30%); visibility: visible;}
+    100% {transform: scaleX(100%) scaleY(100%); visibility: visible;}
+}
+
+@keyframes bounce2 {
+    0% {transform: scaleX(-100%) scaleY(100%); visibility: visible;}
+    12.5% {transform: scaleX(-300%) scaleY(30%); visibility: visible;}
+    13% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    25% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    37.5% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    50% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    62.5% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    75% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    87.5% {transform: scaleX(-300%) scaleY(30%); visibility: hidden;}
+    88% {transform: scaleX(-300%) scaleY(30%); visibility: visible;}
+    100% {transform: scaleX(-100%) scaleY(100%); visibility: visible;}
+}
+
+
+.lemonade_cat {
+    animation-name: bounce;
+    animation-duration: 3.872s;
+    animation-iteration-count: infinite;
+    display:block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.lemonade_cat2 {
+    animation-name: bounce2;
+    animation-delay: 0.968s;
+    animation-duration: 3.872s;
+    animation-iteration-count: infinite;
+    display:block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.lemonade_cat3 {
+    visibility: hidden;
+    animation-name: bounce;
+    animation-delay: 1.936s;
+    animation-duration: 3.872s;
+    animation-iteration-count: infinite;
+    display:block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.lemonade_cat4 {
+    animation-name: bounce;
+    animation-delay: 2.904s;
+    animation-duration: 3.872s;
+    animation-iteration-count: infinite;
+    display:block;
+    width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    justify-items: start;
+    align-items: start;
+}
+
+.grid > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
