@@ -1,5 +1,5 @@
 var count = 0;
-var level = 1;
+var level = 0;
 var current_level = 1;
 var timer
 
@@ -24,6 +24,8 @@ function checkCount() {
     count += 1;
     console.log(count);
     switch (current_level) {
+        case 0:
+            level1();
         case 1:
             level1();
             break;
