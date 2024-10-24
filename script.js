@@ -1,6 +1,7 @@
 var count = 0;
-var level = 0;
+var level = 1;
 var current_level = 1;
+var end = false;
 var timer
 
 function display(obj) {
@@ -26,6 +27,7 @@ function checkCount() {
     switch (current_level) {
         case 0:
             level1();
+            break;
         case 1:
             level1();
             break;
@@ -50,30 +52,30 @@ function checkCount() {
 function resetCount() {
     console.log("count resetted");
     count = 0;
-    switch (level) {
-        case 0:
-            break;
-        case 1:
-            document.getElementById("guide").innerHTML = "Nice thanks dude";
-            break;
-        case 2:
-            document.getElementById("guide").innerHTML = "Finally, thanks";
-            break;
-        case 3:
-            document.getElementById("guide").innerHTML = "Good, don't do that again";
-            break;
-        case 4:
-            document.getElementById("guide").innerHTML = "My dude thank you";
-            break;
-        case 5:
-            document.getElementById("guide").innerHTML = "Oh thank god it's finally over";
-            break;
-        case 6:
-            document.getElementById("guide").innerHTML = "yeah";
-            break;
+    if (end) {
+        switch (level) {
+            case 1:
+                document.getElementById("guide").innerHTML = "Nice thanks dude";
+                break;
+            case 2:
+                document.getElementById("guide").innerHTML = "Finally, thanks";
+                break;
+            case 3:
+                document.getElementById("guide").innerHTML = "Good, don't do that again";
+                break;
+            case 4:
+                document.getElementById("guide").innerHTML = "My dude thank you";
+                break;
+            case 5:
+                document.getElementById("guide").innerHTML = "Oh thank god it's finally over";
+                break;
+            case 6:
+                document.getElementById("guide").innerHTML = "yeah";
+                break;
+        }
     }
     current_level = level;
-    level = 0;
+    end = false;
     setTimeout(displayMessesage,2000);
 }
 
@@ -81,6 +83,7 @@ function level1() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "Dude stop that";
         level = 1;
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "Jeez dude seriously stop that my ears hurt";
@@ -107,6 +110,7 @@ function level1() {
 function level2() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "Jeez dude stop it";
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "Look dude this is very annoying";
@@ -132,6 +136,7 @@ function level2() {
 function level3() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "Hey if you keep that up i WILL remove you";
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "Im warning you dude<br>You don't wanna get removed now do you";
@@ -156,6 +161,7 @@ function level3() {
 function level4() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "Ah great again";
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "I will have to ask my boss to give me more permissions";
@@ -179,6 +185,7 @@ function level4() {
 function level5() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "God damn it dude";
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "We have already been through this";
@@ -201,6 +208,7 @@ function level5() {
 function level6() {
     if (count > 20 && count < 50) {
         document.getElementById("guide").innerHTML = "Boowomp";
+        end = true;
     }
     if (count >= 50 && count < 100) {
         document.getElementById("guide").innerHTML = "Don't you have anything better to do";
