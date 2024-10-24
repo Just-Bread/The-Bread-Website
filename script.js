@@ -49,6 +49,8 @@ function resetCount() {
     console.log("count resetted");
     count = 0;
     switch (level) {
+        case 0:
+            break;
         case 1:
             document.getElementById("guide").innerHTML = "Nice thanks dude";
             break;
@@ -69,6 +71,7 @@ function resetCount() {
             break;
     }
     current_level = level;
+    level = 0;
     setTimeout(displayMessesage,2000);
 }
 
