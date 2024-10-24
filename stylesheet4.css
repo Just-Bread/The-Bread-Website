@@ -1,0 +1,128 @@
+@font-face {
+    font-family: rainyhearts;
+    src: url('rainyhearts.ttf');
+}
+
+body {
+    font-family: rainyhearts;
+    font-size: 25px;
+    color: rgb(9, 43, 0);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    text-shadow: -1px -1px 0 rgb(236, 255, 225), 1px -1px 0 rgb(236, 255, 225), -1px 1px 0 rgb(236, 255, 225), 1px 1px 0 rgb(236, 255, 225);
+    background-size: 30%;
+    background-color:rgb(236, 255, 225);
+}
+
+footer {
+    color: rgb(31, 6, 0);
+    background-color: rgb(255, 220, 177);
+}
+
+p {
+    line-height: normal;
+}
+
+.center_header {
+    text-align: center;
+    background-color: rgb(96, 219, 85);
+    font-size: 40px;
+    padding: 10px;
+}
+
+.other_header {
+    width: fit-content;
+    background-color: rgb(96, 219, 85);
+    padding: 0px 5px;
+}
+
+.right {
+    float: right;
+}
+
+.skip {
+    background-color: white;
+    position: absolute;
+    transform: translateY(-200%);
+}
+
+.skip:focus {
+    transform: translateY(0%);
+}
+
+.navigation {
+    width: fit-content;
+    background-color: white;
+    margin: 20px 0px;
+    padding: 30px;
+    border: 2px solid rgb(96, 219, 85);
+    border-radius: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0px auto;
+    align-items: center;
+    justify-items: center;
+    row-gap: 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 0px;
+    margin: 20px 0px;
+}
+
+.grid > * {
+    width: 40%;
+    border: 5px solid rgb(96, 219, 85);
+    border-radius: 3px;
+}
+
+#image_display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    text-align: center;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes flip_left {
+    from {
+        transform: scaleX(1)
+    }
+    50% {transform: scaleX(-1)}
+    to {
+        transform: scaleX(-1);
+    }
+}
+
+@keyframes flip_right {
+    from {
+        transform: scaleX(-1)
+    }
+    50% {transform: scaleX(1)}
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.flip_left {
+    animation-name: flip_left;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1);
+}
+
+.flip_right {
+    animation-name: flip_right;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1);
+}
