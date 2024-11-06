@@ -203,3 +203,34 @@ footer {
     grid-row-start: 1;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        color: rgb(254, 255, 187);
+    }
+    
+    main {
+        text-shadow: -1px -1px 0 rgb(61, 60, 2), 1px -1px 0 rgb(61, 60, 2), -1px 1px 0 rgb(61, 60, 2), 1px 1px 0 rgb(61, 60, 2);
+        background-color:rgb(61, 60, 2);
+    }
+
+    .navigation {
+        background-color: rgb(170, 161, 28);
+        border: 2px solid rgb(254, 255, 187);
+        border-radius: 10px;
+    }
+
+    .center_header {
+        background-color: rgb(170, 161, 28);
+    }
+    
+    .other_header {
+        background-color: rgb(170, 161, 28);
+    }
+    footer {
+        color: rgb(255, 220, 177);
+        background-color: rgb(31, 6, 0);
+    }
+    .lemonade {
+        background-color: rgb(170, 161, 28);
+    }
+}

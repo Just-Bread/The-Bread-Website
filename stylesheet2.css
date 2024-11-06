@@ -101,3 +101,33 @@ footer {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: rgb(253, 227, 211);
+    }
+    
+    main {
+        text-shadow: -1px -1px 0 rgb(48, 28, 17), 1px -1px 0 rgb(48, 28, 17), -1px 1px 0 rgb(48, 28, 17), 1px 1px 0 rgb(48, 28, 17);
+        background-color:rgb(48, 28, 17);
+        background-image: url(lines\ background\ repeat\ dark.gif);
+    }
+
+    .navigation {
+        background-color: rgb(182, 71, 20);
+        border: 2px solid rgb(253, 227, 211);
+        border-radius: 10px;
+    }
+
+    .center_header {
+        background-color: rgb(182, 71, 20);
+    }
+    
+    .other_header {
+        background-color: rgb(182, 71, 20);
+    }
+    footer {
+        color: rgb(255, 220, 177);
+        background-color: rgb(31, 6, 0);
+    }
+}

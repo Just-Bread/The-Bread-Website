@@ -126,3 +126,35 @@ p {
     animation-iteration-count: infinite;
     animation-timing-function: steps(1);
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: rgb(236, 255, 225);
+    }
+    
+    main {
+        text-shadow: -1px -1px 0 rgb(9, 43, 0), 1px -1px 0 rgb(9, 43, 0), -1px 1px 0 rgb(9, 43, 0), 1px 1px 0 rgb(9, 43, 0);
+        background-color:rgb(9, 43, 0);
+    }
+
+    .navigation {
+        background-color: rgb(28, 148, 17);
+        border: 2px solid rgb(236, 255, 225);
+        border-radius: 10px;
+    }
+
+    .center_header {
+        background-color: rgb(28, 148, 17);
+    }
+    
+    .other_header {
+        background-color: rgb(28, 148, 17);
+    }
+    footer {
+        color: rgb(255, 220, 177);
+        background-color: rgb(31, 6, 0);
+    }
+    .grid {
+        background-color: rgb(236, 255, 225);
+    }
+}

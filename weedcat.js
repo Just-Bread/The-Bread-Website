@@ -4,6 +4,13 @@ var current_level = 1;
 var end = false;
 var timer
 
+function addTabFocus() {
+    let element = document.getElementById("image_selection");
+    for (let i = 0;i < element.children.length; i++) {
+        element.children[i].setAttribute("tabindex",0);
+    }
+}
+
 function display(obj) {
     let new_background = obj.getAttribute("src");
     document.getElementById("image_display").style.backgroundImage = `url(${new_background})`;
@@ -23,11 +30,7 @@ function undisplay() {
 
 function checkCount() {
     count += 1;
-    console.log(count);
     switch (current_level) {
-        case 0:
-            level1();
-            break;
         case 1:
             level1();
             break;
@@ -46,11 +49,16 @@ function checkCount() {
         case 6:
             level6();
             break;
+        case 7:
+            level7();
+            break;
+        case 8:
+            level8();
+            break;
     }
 }
 
 function resetCount() {
-    console.log("count resetted");
     count = 0;
     if (end) {
         switch (level) {
@@ -72,6 +80,11 @@ function resetCount() {
             case 6:
                 document.getElementById("guide").innerHTML = "yeah";
                 break;
+            case 7:
+                document.getElementById("guide").innerHTML = "Cool 👍";
+                break;
+            case 8:
+                document.getElementById("guide").innerHTML = "Im finding a new job after this";
         }
     }
     current_level = level;
@@ -105,6 +118,7 @@ function level1() {
         document.getElementById("guide").innerHTML = "Fine i give up do whatever you want";
         level = 6;
     }
+    level7();
 }
 
 function level2() {
@@ -131,6 +145,7 @@ function level2() {
         document.getElementById("guide").innerHTML = "Fine i give up do whatever you want";
         level = 6;
     }
+    level7();
 }
 
 function level3() {
@@ -156,6 +171,7 @@ function level3() {
         document.getElementById("guide").innerHTML = "Fine i give up do whatever you want";
         level = 6;
     }
+    level7();
 }
 
 function level4() {
@@ -180,6 +196,7 @@ function level4() {
         document.getElementById("guide").innerHTML = "Fine i give up do whatever you want";
         level = 6;
     }
+    level7();
 }
 
 function level5() {
@@ -203,6 +220,7 @@ function level5() {
         document.getElementById("guide").innerHTML = "Fine i give up do whatever you want";
         level = 6;
     }
+    level7();
 }
 
 function level6() {
@@ -224,6 +242,26 @@ function level6() {
     }
     if (count >= 300) {
         document.getElementById("guide").innerHTML = ":|";
+    }
+    level7();
+}
+
+function level7() {
+    if (count >= 1000 && count < 1100) {
+        document.getElementById("guide").innerHTML = "Ok if i gave you something cool would you please stop";
+        level = 7;
+        end = true;
+    }
+    if (count >= 1100) {
+        document.getElementById("guide").innerHTML = "Ok here you go 🍞";
+        level = 8;
+    }
+}
+
+function level8() {
+    if (count >= 50) {
+        document.getElementById("guide").innerHTML = "Go away i already gave you the thing";
+        end = true;
     }
 }
 

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet4.css">
-    <script src="script.js"></script>
+    <script src="weedcat.js"></script>
     <title>
         The Weedcat
     </title>
 </head>
-<body>
+<body  onload="addTabFocus()">
     <a href="#main" class="skip">Skip to main content</a>
     <main>
         <img src="meowscarada%20plush.png" alt="meowscarada plush" style="width: 20%; transform: scaleX(-1);" class="flip_left">
@@ -46,13 +46,13 @@
             <div style="text-align: center; font-size: 150%;" id="guide">
             Hover over an image to put it on the Grand Display
             </div>
-            <div class="grid">
-                <img src="the_meowscarada.png" alt="the meowscarada official render" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
-                <img src="meowscarada%20plush2.png" alt="meowscarada plushie front facing" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
-                <img src="meowscarada%20sparkle%20on.png" alt="meowscarada doing sprakle on pose" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
-                <img src="meowscarada%20swim.png" alt="meowscarada T-posing in the ocean" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
-                <img src="mrweedcat.webp" alt="meowscarada but mr beast meme" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
-                <img src="better%20call%20weedcat%20gif.gif" alt="meowscarada but better call saul intro meme" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+            <div class="grid" id="image_selection">
+                <img src="the_meowscarada.png" alt="1. The meowscarada official render" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+                <img src="meowscarada%20plush2.png" alt="2. Meowscarada plushie front facing" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+                <img src="meowscarada%20sparkle%20on.png" alt="3. Meowscarada doing sprakle on pose" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+                <img src="meowscarada%20swim.png" alt="4. Meowscarada T-posing in the ocean" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+                <img src="mrweedcat.webp" alt="5. Meowscarada but mr beast meme" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
+                <img src="better%20call%20weedcat%20gif.gif" alt="6. Meowscarada but better call saul intro meme" onmouseover="display(this)" onfocus="display(this)" onmouseleave="undisplay()" onblur="undisplay()">
             </div>
             <header class="other_header">
                 <h1 id="miscellaneous">
@@ -88,7 +88,7 @@
         <img src="meowscarada%20plush.png" alt="mewoscarada plush 2" style="width: 20%;" class="right flip_right">
     </main>
     <footer>
-        The Bread Website - The
+        The Bread Website - The Weedcat
     </footer>
 </body>
 </html>
