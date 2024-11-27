@@ -7,18 +7,14 @@
 body {
     font-family: rainyhearts;
     font-size: 25px;
-    color: rgb(53, 0, 26);
+    color: rgb(0, 1, 53);
     margin-left: auto;
     margin-right: auto;
 }
 
 main {
-    text-shadow: -1px -1px 0 rgb(255, 221, 231), 1px -1px 0 rgb(255, 221, 231), -1px 1px 0 rgb(255, 221, 231), 1px 1px 0 rgb(255, 221, 231);
-    background-image: url(bob%20dance.gif);
-    background-size: 30%;
-    background-color:rgb(255, 221, 231);
-    background-position: center;
-    background-repeat: no-repeat;
+    text-shadow: -1px -1px 0 rgb(106, 188, 255), 1px -1px 0 rgb(106, 188, 255), -1px 1px 0 rgb(106, 188, 255), 1px 1px 0 rgb(106, 188, 255);
+    background-color:rgb(106, 188, 255);
 }
 
 footer {
@@ -49,14 +45,14 @@ p {
 
 .center_header {
     text-align: center;
-    background-color: rgb(255, 191, 228);
+    background-color: rgb(45, 73, 226);
     font-size: 40px;
     padding: 10px;
 }
 
 .other_header {
     width: fit-content;
-    background-color: rgb(255, 191, 228);
+    background-color: rgb(45, 73, 226);
     padding: 0px 5px;
 }
 
@@ -79,14 +75,66 @@ p {
     background-color: white;
     margin: 20px 0px;
     padding: 30px;
-    border: 2px solid rgb(255, 191, 228);
+    border: 2px solid rgb(45, 73, 226);
     border-radius: 10px;
 }
 
+.punchy {
+    display: grid;
+    grid-template-areas: 
+        'portrait'
+        'dialogue'
+        'talk';
+    align-items: center;
+}
+
+#portrait {grid-area: portrait;}
+#talk {
+    grid-area: talk;
+}
+
+#talk > button {
+    font-family: rainyhearts;
+    border: 2px outset rgb(45, 73, 226);
+    font-size: 30px;
+    margin: 10% 10%;
+    border-radius: 5px;
+}
+
+.punchy > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display_image {
+    width: 30vw;
+}
+
+#dialogue {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 1, 53);
+    text-shadow: none;
+    padding: 1rem;
+    background-color: rgb(191, 226, 255);
+    background-image: url(lines\ background\ repeat.gif);
+    background-size: 40%;
+    border: 5px outset rgb(45, 73, 226);
+    border-radius: 40px;
+    min-height: 5rem;
+    height: fit-content;
+    grid-area: dialogue;
+}
+
 @media screen and (min-width: 772px) {
-    .content_grid {
+    .punchy {
+        grid-template-areas: 
+        'portrait dialogue'
+        'portrait talk';
         grid-template-columns: 50% 50%;
     }
+
     .margin_div {
         margin-left: 10%;
         margin-right: 10%;
@@ -94,9 +142,13 @@ p {
 }
 
 @media screen and (min-width: 992px) {
-    .content_grid {
+    .punchy {
+        grid-template-areas: 
+        'portrait dialogue'
+        'portrait talk';
         grid-template-columns: 50% 50%;
     }
+
     .margin_div {
         margin-left: 20%;
         margin-right: 20%;

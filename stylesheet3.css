@@ -109,7 +109,7 @@ footer {
     transform: scale(0.9);
     filter: blur(5px);
     animation-name: spin;
-    animation-duration: 2s;
+    animation-duration: 1.936s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -201,6 +201,102 @@ footer {
 .grid > * {
     grid-column-start: 1;
     grid-row-start: 1;
+}
+
+@keyframes tax_collect {
+    0% {left: 100vw}
+    50% {left: calc(100vw - 30%)}
+    100% {left: calc(100vw - 30%)}
+}
+
+@keyframes tax_wait {
+    
+}
+
+#tax_cat {
+    visibility: visible;
+    position: fixed;
+    width: 30%;
+    left: 100vw;
+    bottom: 10vh;
+    z-index: 2;
+    /* animation: tax_collect 2s ease-in-out infinite alternate; */
+}
+
+.box {
+    width: fit-content;
+    background-color: white;
+    padding: 30px;
+    border: 2px solid rgb(255, 246, 120);
+    border-radius: 10px;
+}
+
+.company {
+    display: grid;
+    grid-template-areas: 
+        "lemon_amount"
+        "clicker_button"
+        "stats_display";
+    justify-items: center;
+    margin: 5%;
+    row-gap: 5%;
+}
+
+.company > * {
+    font-size: max(1.8vw, 2vh);
+}
+
+#lemon_amount {
+    grid-area: lemon_amount;
+}
+
+#clicker_button {
+    grid-area: clicker_button;
+    min-width: 50%;
+}
+
+#stats_display {
+    grid-area: stats_display;
+}
+
+#store_message {
+    text-align: center;
+    border: 2px outset rgb(255, 246, 120);
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.store_front {
+    display: grid;
+    row-gap: 5vh;
+    background-color: white;
+    padding: 5%;
+    margin: 5%;
+}
+
+.store_items {
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    gap: 5%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 20vh;
+}
+
+.store_items > * {
+    font-family: rainyhearts;
+    font-size: max(1.8vw, 2vh);
+    word-wrap: break-word;
+    min-height: 10vh;
+}
+
+@media screen and (min-width: 772px) {
+    .company {
+        grid-template-areas: 
+            "lemon_amount stats_display"
+            "clicker_button stats_display";
+        grid-template-columns: 50% 50%;
+    }
 }
 
 @media (prefers-color-scheme: dark) {

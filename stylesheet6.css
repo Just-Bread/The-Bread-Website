@@ -1,0 +1,25 @@
+@font-face {
+    font-family: rainyhearts;
+    src: url('rainyhearts.ttf');
+}
+
+body {
+    font-family: rainyhearts;
+    font-size: 25px;
+    color: rgb(61, 2, 2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    text-shadow: -1px -1px 0 rgb(253, 227, 211), 1px -1px 0 rgb(253, 227, 211), -1px 1px 0 rgb(253, 227, 211), 1px 1px 0 rgb(253, 227, 211);
+    background-color:rgb(253, 227, 211);
+    background-image: url("lines\ background\ repeat.gif");
+    background-size: 50%;
+    background-position: center;
+}
+
+footer {
+    color: rgb(31, 6, 0);
+    background-color: rgb(255, 220, 177);
+}

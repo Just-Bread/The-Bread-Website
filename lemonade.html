@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet3.css">
+    <script src="vibe.js"></script>
     <title>
         Lemonade
     </title>
 </head>
 
-<body>
+<body onload="load_lem()" style="overflow-x: hidden;">
     <a href="#main" class="skip">Skip to main content</a>
     <main>
-        <img src="lemon.png" alt="lemon" style="width: 20%; margin: -10px 20px;" class="flip_left">
-        <img src="lemon.png" alt="lemon 2" style="transform: scaleX(-1); width: 20%; margin: -10px 20px;" class="right flip_right">
+        <img src="tax_cat_3.webp" alt="tax cat (he has a knife)" id="tax_cat">
+        <img src="lemon.png" alt="lemon" style="width: 20%; margin: 0 2%;" class="flip_left">
+        <img src="lemon.png" alt="lemon 2" style="transform: scaleX(-1); width: 20%; margin: 0 2%;" class="right flip_right">
         <header class="center_header" id="main">
             <h1>
                 Lemonade
@@ -24,6 +26,10 @@
                 <nav >
                     <a href="#lemonade">Lemonade Cat</a>
                     <br>
+                    <a href="#clicker">Lemon Generator</a>
+                    <br>
+                    <a href="#store">Lemon Store</a>
+                    <br>
                     <a href="#miscellaneous">Miscellaneous</a>
                     <br>
                     <a href="#other">Other pages</a>
@@ -34,20 +40,74 @@
                     Lemonade Cat
                 </h1>
             </header>
-            <div class="grid">
-                <img src="lemongato1.png" alt="lemongato" class="lemonade_cat">
-                <img src="lemongato2.png" alt="lemongato" class="lemonade_cat2">
-                <img src="lemongato1.png" alt="lemongato" class="lemonade_cat3">
-                <img src="lemongato2.png" alt="lemongato" class="lemonade_cat4">
+            <div class="grid" onclick="play_nya()">
+                <img src="lemongato1.png" alt="lemongato" class="lemonade_cat" style="visibility: hidden;">
+                <img src="lemongato2.png" alt="lemongato" class="lemonade_cat2" style="visibility: hidden;">
+                <img src="lemongato1.png" alt="lemongato" class="lemonade_cat3" style="visibility: hidden;">
+                <img src="lemongato2.png" alt="lemongato" class="lemonade_cat4" style="visibility: hidden;">
             </div>
+            <header class="other_header">
+                <h1 id="clicker">
+                    Lemon Generator
+                </h1>
+            </header>
+            <div>
+                <div>
+                    Help Lemonade Cat generate lemons for lemonade!
+                </div>
+                <div>
+                    <div class="company">
+                        <div id="lemon_amount" class="box">
+                            Your lemons: 0 🍋
+                        </div>
+                        <button onclick="clicker()" id="clicker_button">🍋</button>
+                        <div class="box" id="stats_display">
+                            Lemons per click:
+                            <br>
+                            Lemons per second:
+                            <br>
+                            Employees:
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <header class="other_header">
+                <h1 id="store">
+                    Lemon Store
+                </h1>
+            </header>
+            <div>
+                Spend your lemons here!
+                <br>
+                Help Lemonade Cat make lemonade!
+                <br>
+                <div class="store_front">
+                    <div class="store_items">
+                        <button onclick="buy_lemonade()" onmouseover="buy_lemonade_info()" onfocus="buy_lemonade_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="lemonade_button">50 | Make lemonade 🍋</button>
+                        <button onclick="buy_employee()" onmouseover="buy_employee_info()" onfocus="buy_employee_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="hire_button">200 | Hire lemon employee 🍋💼</button>
+                        <button onclick="buy_boowomp()" onmouseover="buy_boowomp_info()" onfocus="buy_boowomp_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="boowomp_button">10 | Play a boowomp sound</button>
+                        <button onclick="buy_tree()" onmouseover="buy_tree_info()" onfocus="buy_tree_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="tree_button">5000 | Grow a lemon tree 🍋🌳</button>
+                        <button onclick="buy_juicer()" onmouseover="buy_juicer_info()" onfocus="buy_juicer_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="juicer_button">10K | Get a juicer 🍋⚙️</button>
+                        <button onclick="buy_factory()" onmouseover="buy_factory_info()" onfocus="buy_factory_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="factory_button">100K | Build lemon factory 🍋🏭</button>
+                        <button onclick="buy_spells()" onmouseover="buy_spells_info()" onfocus="buy_spells_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="spells_button">500K | Lemonade spells 🍋🪄</button>
+                        <button onclick="buy_portal()" onmouseover="buy_portal_info()" onfocus="buy_portal_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="portal_button">2M | Open a lemon portal?? 🍋♾️</button>
+                        <button onclick="buy_win()" onmouseover="buy_win_info()" onfocus="buy_win_info()" onmouseleave="store_reset_message()" onblur="store_reset_message()" id="win_button">🍋The Billion Lemons🍋</button>
+                    </div>
+                    <div id="store_message">
+                        Hover over an item for details!
+                    </div>
+                </div>
+            </div>
+
             <header class="other_header">
                 <h1 id="miscellaneous">
                     Miscellaneous
                 </h1>
             </header>
+            Lemon display
             <div class="lemonade">
                 <img src="lemon.png" alt="lemon" style="width: 10%">
-                <img src="lemon.png" alt="lemon" style="width: 10%">
+                <img src="lemon.png" alt="lemon" style="width: 10%" onclick="reset()" onkeypress="reset()" title="Mystery lemon" tabindex="0">
                 <img src="lemon.png" alt="lemon" style="width: 10%">
             </div>
             (play this if it doesn't autoplay)
@@ -69,6 +129,8 @@
                 <a href="lemonade.html">Lemonade</a>
                 <br>
                 <a href="weedcat.html">Weedcat</a>
+                <br>
+                <a href="punchy.html">pungyy.....</a>
             </nav>
         </div>
         <br>
