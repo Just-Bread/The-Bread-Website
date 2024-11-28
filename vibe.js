@@ -493,7 +493,6 @@ function update_display() {
                                                     <br>Employees: ${lem_employee}
                                                     <br>Lemon trees: ${lem_tree}
                                                     <br>Lemon factories: ${lem_factory}
-                                                    <br>Lemon spells: ${lem_spells}
                                                     <br>Lemon portals: ${lem_portal}`;
 }
 
@@ -502,10 +501,10 @@ function taxation_rate() {
         tax = 0;
     }
     else if (lem < 10000) {
-        tax = 10;
+        tax = 5;
     }
     else if (lem < 1000000) {
-        tax = 15;
+        tax = 10;
     }
     else {
         tax = 20;
@@ -520,6 +519,9 @@ function taxation() {
         addLems(Math.floor(-(lem * tax) / 100));
         setTimeout(taxation_end,8000);
         setTimeout(taxation,60000);
+    }
+    else {
+        setTimeout(taxation,500);
     }
 }
 
