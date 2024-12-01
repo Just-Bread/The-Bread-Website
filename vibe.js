@@ -98,6 +98,7 @@ let spells_button = document.getElementById("spells_button");
 let portal_button = document.getElementById("portal_button");
 // tax cat :3
 let tax_cat = document.getElementById("tax_cat");
+let tax_text = document.getElementById("tax_text");
 
 
 function display_number(number) {
@@ -446,6 +447,11 @@ function load_lem() {
     portal_button = document.getElementById("portal_button");
     // load variables
     lem = +localStorage.getItem("lem");
+    if (isNaN(lem)) {
+        lem = 0;
+        localStorage.setItem("lem",0);
+        location.reload();
+    }
     lem_employee = +localStorage.getItem("lem_employee");
     lem_gen = +localStorage.getItem("lem_gen");
     lem_tree = +localStorage.getItem("lem_tree");
@@ -472,6 +478,7 @@ function load_lem() {
     lem_summon();
     // and tax
     tax_cat = document.getElementById("tax_cat");
+    tax_text = document.getElementById("tax_text");
     taxation_rate();
     taxation();
     // win check
@@ -504,10 +511,10 @@ function taxation_rate() {
         tax = 5;
     }
     else if (lem < 1000000) {
-        tax = 10;
+        tax = 7;
     }
     else {
-        tax = 20;
+        tax = 10;
     }
     setTimeout(taxation_rate,500);
 }
@@ -516,13 +523,20 @@ function taxation() {
     if (tax > 0) {
         tax_cat.style.animation = "tax_collect 2s ease-in-out 2 alternate";
         setTimeout(play_splat,1000);
-        addLems(Math.floor(-(lem * tax) / 100));
+        let tax_amount = Math.floor((lem * tax) / 100);
+        tax_text.innerHTML = `-${display_number(tax_amount)} 🍋`;
+        setTimeout(show_tax_amount,200);
+        addLems(-tax_amount);
         setTimeout(taxation_end,8000);
         setTimeout(taxation,60000);
     }
     else {
         setTimeout(taxation,500);
     }
+}
+
+function show_tax_amount() {
+    tax_text.style.animation = "tax_collect 2s ease-in-out 2 alternate";
 }
 
 function play_splat() {
@@ -532,6 +546,7 @@ function play_splat() {
 
 function taxation_end() {
     tax_cat.style.animation = "tax_wait 1s linear";
+    tax_text.style.animation = "tax_wait 1s linear";
 }
 
 function win() {

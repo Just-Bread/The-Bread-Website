@@ -205,8 +205,8 @@ footer {
 
 @keyframes tax_collect {
     0% {left: 100vw}
-    50% {left: calc(100vw - 30%)}
-    100% {left: calc(100vw - 30%)}
+    50% {left: calc(70vw)}
+    100% {left: calc(70vw)}
 }
 
 @keyframes tax_wait {
@@ -216,10 +216,23 @@ footer {
 #tax_cat {
     visibility: visible;
     position: fixed;
-    width: 30%;
+    width: 30vw;
     left: 100vw;
     bottom: 10vh;
     z-index: 2;
+    /* animation: tax_collect 2s ease-in-out infinite alternate; */
+}
+
+#tax_text {
+    background-color: orange;
+    visibility: visible;
+    position: fixed;
+    bottom: calc(10vh + 20vw);
+    z-index: 1;
+    padding: 1%;
+    left: 100vw;
+    width: 30vw;
+    border: 3px dashed white;
     /* animation: tax_collect 2s ease-in-out infinite alternate; */
 }
 
