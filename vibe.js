@@ -123,7 +123,7 @@ function display_number(number) {
 }
 
 function clicker() {
-    addLems(lem_gen + 1 + lem_juicer * 25 + lem_spells * 10000);
+    addLems(lem_gen + 1 + lem_juicer * 25 + lem_spells * 20000);
     click = new Audio("sfx\\enter.aac");
     click.playbackRate = Math.random() * 1.5 + 0.5;
     click.preservesPitch = false;
@@ -310,7 +310,7 @@ function buy_spells() {
 function buy_spells_info() {
     store_message(`Conjure up magical lemons with wizardry!
         <br>Lemonade Cat studies the dark arts for even more lemons!
-        <br>(+10K lemon per click)`);
+        <br>(+20K lemon per click)`);
 }
 
 // buy lemon portal button
@@ -366,8 +366,9 @@ function buy_win_info() {
 }
 
 // autoclickers
+let bg_clicker;
 function lem_work() {
-    if (lem_employee > 0) {
+    if (lem_employee > 0 && !document.hidden) {
         addLems(1);
         setTimeout(lem_work,500/lem_employee);
     }
@@ -377,7 +378,7 @@ function lem_work() {
 }
 
 function lem_grow() {
-    if (lem_tree > 0) {
+    if (lem_tree > 0 && !document.hidden) {
         addLems(1);
         setTimeout(lem_grow,20 / lem_tree);
     }
@@ -387,7 +388,7 @@ function lem_grow() {
 }
 
 function lem_produce() {
-    if (lem_factory > 0) {
+    if (lem_factory > 0 && !document.hidden) {
         addLems(100);
         setTimeout(lem_produce,100 / lem_factory);
     }
@@ -397,7 +398,7 @@ function lem_produce() {
 }
 
 function lem_summon() {
-    if (lem_portal > 0) {
+    if (lem_portal > 0 && !document.hidden) {
         addLems(10000);
         setTimeout(lem_summon,50 / lem_portal);
     }
@@ -405,6 +406,19 @@ function lem_summon() {
         setTimeout(lem_summon,500);
     }
 }
+
+function background_autoclicker() {
+    let lps = 2 * lem_employee + 50 * lem_tree + 1000 * lem_factory + 200000 * lem_portal;
+    addLems(lps);
+}
+
+document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+        bg_clicker = setInterval(background_autoclicker, 1000); // Resume setInterval when tab becomes visible
+    } else {
+        clearInterval(bg_clicker); // Stop setInterval when tab becomes hidden
+    }
+  });
 
 // increase/decrease the amount of lemons and update the count
 function addLems(lems) {
@@ -495,7 +509,7 @@ function update_lem() {
 function update_display() {
     document.getElementById("stats_display").innerHTML = `Your stats
                                                     <br>---------------------
-                                                    <br>Lemons per click: ${display_number(lem_gen + 1 + lem_juicer * 25 + lem_spells * 10000)}
+                                                    <br>Lemons per click: ${display_number(lem_gen + 1 + lem_juicer * 25 + lem_spells * 20000)}
                                                     <br>Lemons per second: ${display_number(2 * lem_employee + 50 * lem_tree + 1000 * lem_factory + 200000 * lem_portal)}
                                                     <br>Employees: ${lem_employee}
                                                     <br>Lemon trees: ${lem_tree}
@@ -503,6 +517,7 @@ function update_display() {
                                                     <br>Lemon portals: ${lem_portal}`;
 }
 
+// taxes
 function taxation_rate() {
     if (lem < 1000) {
         tax = 0;
@@ -548,6 +563,7 @@ function taxation_end() {
     tax_cat.style.animation = "tax_wait 1s linear";
     tax_text.style.animation = "tax_wait 1s linear";
 }
+
 
 function win() {
     alert(`CONGRATULATIONS!!\n\nYou helped Lemonade Cat achieve her billion lemons!`);
